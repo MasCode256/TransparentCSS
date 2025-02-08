@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>CSS Test</title>
+		<link
+			rel="stylesheet"
+			href="css/style.css"
+		/>
+
+		<script src="js/images.js"></script>
+		<script
+			defer
+			src="js/image_load.js"
+		></script>
+	</head>
+	<body class="center-x">
+		<div class="shadow"></div>
+		<div class="t pad mrg center-x">
+			<h1
+				class="font-1"
+				onload="this.innerText = new Date();"
+			>
+				Hello, world!
+			</h1>
+			<p>This is emaple for CSS.</p>
+			<div class="center-y">
+				<button
+					class="primary a"
+					onclick="css_main()"
+				>
+					Изменить картинку
+				</button>
+				<button class="primary b">Test</button>
+				<button>Test</button>
+			</div>
+		</div>
+		<div class="center-y">
+			<input
+				type="text"
+				placeholder="Example"
+				name="Example"
+				class="search"
+			/>
+			<button>Test</button>
+		</div>
+	</body>
+</html>

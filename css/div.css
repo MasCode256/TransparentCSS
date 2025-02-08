@@ -1,0 +1,34 @@
+div {
+	&.t {
+		background: var(--t);
+		border-radius: var(--div-br);
+	}
+
+	&.pad {
+		padding-left: 1vw;
+		padding-right: 1vw;
+		padding-top: 1vh;
+		padding-bottom: 1vh;
+	}
+
+	&.mrg {
+		margin-left: 1vw;
+		margin-right: 1vw;
+		margin-top: 1vh;
+		margin-bottom: 1vh;
+	}
+}
+
+body,
+div {
+	&.center-y {
+		display: flex;
+		align-items: center;
+	}
+
+	&.center-x {
+		display: flex; /* Включаем Flexbox для центрирования */
+		align-items: center; /* Центрируем элементы по вертикали */
+		flex-direction: column;
+	}
+}

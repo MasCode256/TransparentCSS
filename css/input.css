@@ -1,0 +1,69 @@
+input {
+	width: 15vw;
+	min-height: 1.6vh;
+
+	padding-left: var(--pad-x);
+	padding-right: var(--pad-x);
+	padding-top: var(--pad-y);
+	padding-bottom: var(--pad-y);
+
+	border: none;
+	border-radius: var(--btn-br);
+
+	background: var(--t);
+
+	outline: none;
+
+	transition: all var(--tt) ease-in-out;
+
+	color: var(--w);
+	font-family: var(--ff);
+	text-shadow: 0 0 8px var(--bg);
+
+	&:hover {
+		background: var(--t0);
+
+		padding-left: calc(var(--pad-x) * 1.08);
+		padding-right: calc(var(--pad-x) * 1.08);
+
+		width: 16.5vw;
+	}
+
+	&:focus {
+		padding-left: calc(var(--pad-x) * 1.08);
+		padding-right: calc(var(--pad-x) * 1.08);
+
+		width: 16.5vw;
+	}
+
+	&:hover:focus {
+		padding-left: calc(var(--pad-x) * 1.1);
+		padding-right: calc(var(--pad-x) * 1.1);
+
+		width: 18vw;
+	}
+
+	&::placeholder {
+		color: var(--ph);
+	}
+
+	/* Для браузеров WebKit (Chrome, Safari) */
+	&::-webkit-input-placeholder {
+		color: var(--ph);
+	}
+
+	/* Для Firefox */
+	&::-moz-placeholder {
+		color: var(--ph);
+	}
+
+	/* Для Internet Explorer 10+ */
+	&:-ms-input-placeholder {
+		color: var(--ph);
+	}
+
+	/* Для Edge */
+	&::-ms-input-placeholder {
+		color: var(--ph);
+	}
+}

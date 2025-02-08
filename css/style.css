@@ -1,0 +1,103 @@
+@import url("buttons.css");
+@import url("input.css");
+@import url("font.css");
+@import url("div.css");
+
+:root {
+	--r: 192;
+	--g: 192;
+	--b: 192;
+	--a: 0.125;
+	--t: rgba(var(--r), var(--g), var(--b), var(--a));
+	--t0: rgba(
+		calc(var(--r) * 1.5),
+		calc(var(--g) * 1.5),
+		calc(var(--b) * 1.5),
+		calc(var(--a) * 2)
+	);
+	--t1: rgba(
+		calc(var(--r) * 1.5),
+		calc(var(--g) * 1.5),
+		calc(var(--b) * 1.5),
+		calc(var(--a) * 3)
+	);
+
+	--ph: rgba(255, 255, 255, 0.75);
+
+	--alpha: #00ffff;
+	--beta: #ff00ff;
+	--w: #fff;
+
+	--div-br: 6px;
+	--btn-br: 25px;
+
+	--bg: #000;
+
+	--tt: 0.3s;
+
+	--ff: "0", "1", Consolas;
+
+	--pad-x: 2vw;
+	--pad-y: 0.8vh;
+	--mrg-x: 0.3vw;
+	--mrg-y: 0.3vh;
+	--hover-x: 0.5vw;
+}
+
+html {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+	background-color: var(--bg);
+
+	background-image: url(""); /* Укажите путь к вашему изображению */
+	background-size: cover; /* Масштабирует изображение, чтобы оно заполнило весь фон */
+	background-repeat: no-repeat; /* Не повторять изображение */
+	background-position: center; /* Центрирует изображение */
+	background-attachment: fixed; /* Фоновое изображение фиксировано относительно окна браузера */
+
+	color: #fff;
+	font-family: "0", "1", Consolas;
+}
+
+body {
+	transition: all var(--tt) ease-in-out;
+	background: rgba(32, 32, 32, 0.18);
+
+	height: 100vh;
+
+	padding: 0;
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin-left: 0.1vw;
+	margin-right: 0.1vw;
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+
+	text-shadow: 0 0 32px var(--bg);
+	text-shadow: 0 0 16px var(--bg);
+}
+
+::selection {
+	background: var(--t1);
+}
+
+.shadow {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-shadow: inset 0 0 45px rgba(0, 0, 0, 0.9),
+		inset 0 0 20px rgba(0, 0, 0, 0.6);
+	pointer-events: none; /* Чтобы клики проходили сквозь тень */
+}
