@@ -1,0 +1,29 @@
+iframe.page_switch {
+	transition: all var(--animation-time) ease-in-out;
+	background: transparent;
+}
+
+div.switch_page {
+	--animation-time: 1s;
+	transition: all var(--animation-time) ease-in-out;
+
+	&.process * {
+		background: transparent;
+		color: transparent;
+		border: transparent;
+		text-shadow: none;
+		box-shadow: transparent;
+
+		&::placeholder {
+			color: transparent;
+			text-shadow: none;
+
+			transition: all var(--animation-time) ease-in-out;
+		}
+
+		&::selection {
+			color: transparent;
+			background: transparent;
+		}
+	}
+}

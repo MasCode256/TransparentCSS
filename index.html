@@ -13,6 +13,7 @@
 		/>
 
 		<script src="js/images.js"></script>
+		<script src="js/script.js"></script>
 		<script
 			defer
 			src="js/image_load.js"
@@ -22,7 +23,7 @@
 		<div class="shadow"></div>
 		<div class="t pad mrg center-x">
 			<h1
-				class="font-1"
+				class="font-1 epic"
 				onload="this.innerText = new Date();"
 			>
 				Hello, world!
@@ -44,9 +45,25 @@
 				type="text"
 				placeholder="Example"
 				name="Example"
-				class="search"
+				class="scalable"
+				data-scale="1.5"
 			/>
 			<button>Test</button>
+		</div>
+		<div class="center-y">
+			<div class="center-x ">
+				<button onclick="switch_page('frame', 'html/0.html')">
+					Страница 0
+				</button>
+				<button onclick="switch_page('frame', 'html/1.html')">
+					Страница 1
+				</button>
+			</div>
+			<div
+				class="switch_page process"
+				id="frame"
+				style="width: 80vw; height: 50vh"
+			></div>
 		</div>
 	</body>
 </html>

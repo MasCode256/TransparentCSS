@@ -23,7 +23,7 @@ button {
 	transition: all var(--tt) ease-in-out;
 
 	cursor: pointer;
-    user-select: none;
+	user-select: none;
 
 	&:hover {
 		padding-left: calc(var(--pad-x) + var(--hover-x));
@@ -35,7 +35,7 @@ button {
 	}
 
 	&:active {
-		transform: scale(0.7);
+		transform: scale(0.6);
 	}
 
 	&.primary {

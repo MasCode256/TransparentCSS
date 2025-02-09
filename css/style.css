@@ -1,5 +1,6 @@
 @import url("buttons.css");
 @import url("input.css");
+@import url("frame.css");
 @import url("font.css");
 @import url("div.css");
 
@@ -42,6 +43,8 @@
 	--mrg-x: 0.3vw;
 	--mrg-y: 0.3vh;
 	--hover-x: 0.5vw;
+
+	--text-shadow: 0 0 32px var(--bg), 0 0 24px var(--bg), 0 0 16px var(--bg);
 }
 
 html {
@@ -69,6 +72,10 @@ body {
 
 	padding: 0;
 	margin: 0;
+
+	& * {
+		transition: all var(--tt) ease-in-out;
+	}
 }
 
 h1,
@@ -83,8 +90,7 @@ p {
 	margin-top: 1vh;
 	margin-bottom: 1vh;
 
-	text-shadow: 0 0 32px var(--bg);
-	text-shadow: 0 0 16px var(--bg);
+	text-shadow: var(--text-shadow);
 }
 
 ::selection {

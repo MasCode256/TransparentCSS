@@ -20,6 +20,8 @@ input {
 	font-family: var(--ff);
 	text-shadow: 0 0 8px var(--bg);
 
+	user-select: none;
+
 	&:hover {
 		background: var(--t0);
 

@@ -15,3 +15,7 @@
 .font-1 {
 	font-family: "1", Consolas;
 }
+
+.epic {
+	text-shadow: var(--text-shadow), 3vw 1vh 2px var(--t1), -3vw 2vh 2px var(--t1), 3.5vw -2.5vh 2px var(--t1), -3.5vw -1.5vh 2px var(--t1), -0.5vw -0.5vh 2px var(--t1), 0.5vw 0.5vh 2px var(--t1);
+}
