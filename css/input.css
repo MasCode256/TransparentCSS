@@ -47,6 +47,7 @@ input {
 
 	&::placeholder {
 		color: var(--ph);
+		transition: all var(--animation-time) ease-in-out;
 	}
 
 	/* Для браузеров WebKit (Chrome, Safari) */
