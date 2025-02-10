@@ -36,6 +36,8 @@ var images = {
 		coding: [
 			"0.gif",
 			"1.gif",
+			"2.gif",
+			"3.gif",
 			"0.jpg",
 			"1.jpg",
 			"2.jpg",
@@ -62,6 +64,10 @@ var images = {
 			"23.jpg",
 			"24.jpg",
 			"25.jpg",
+			"26.jpg",
+			"27.jpg",
+			"28.jpg",
+			"29.jpg",
 		],
 	},
 	light: {

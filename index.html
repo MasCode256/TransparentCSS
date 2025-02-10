@@ -20,7 +20,9 @@
 		></script>
 	</head>
 	<body class="center-x">
+		<div id="image_animation_div"></div>
 		<div class="shadow"></div>
+		<p id="out">Hello, world!</p>
 		<div class="t pad mrg center-x">
 			<h1
 				class="font-1 epic"
@@ -28,11 +30,16 @@
 			>
 				Hello, world!
 			</h1>
-			<p>This is emaple for CSS.</p>
+			<p>
+				This is emaple for CSS.<a
+					href="https://github.com/MasCode256/TransparentCSS"
+					>Github</a
+				>
+			</p>
 			<div class="center-y">
 				<button
 					class="primary a"
-					onclick="css_main()"
+					onclick="switch_image()"
 				>
 					Изменить картинку
 				</button>
@@ -40,28 +47,19 @@
 				<button>Test</button>
 			</div>
 		</div>
+		<div class="center-y"></div>
 		<div class="center-y">
-			<input
-				type="text"
-				placeholder="Example"
-				name="Example"
-				class="scalable"
-				data-scale="1.5"
-			/>
-			<button>Test</button>
-		</div>
-		<div class="center-y">
-			<div class="center-x ">
-				<button onclick="switch_page('frame', 'html/0.html')">
+			<div class="center-x">
+				<button onclick="switch_page('main', 'html/0.html')">
 					Страница 0
 				</button>
-				<button onclick="switch_page('frame', 'html/1.html')">
+				<button onclick="switch_page('main', 'html/1.html')">
 					Страница 1
 				</button>
 			</div>
 			<div
 				class="switch_page process"
-				id="frame"
+				id="main"
 				style="width: 80vw; height: 50vh"
 			></div>
 		</div>

@@ -1,8 +1,19 @@
-async function set_background_by_url(url) {
-	document.documentElement.style.setProperty(
-		"background-image",
-		"url(" + url + ")"
-	);
+async function set_background_by_url(url, id = "") {
+	if (id == "") {
+		document.documentElement.style.setProperty(
+			"background-image",
+			"url(" + url + ")"
+		);
+	} else {
+		element = document.getElementById(id);
+
+		if (element) {
+			element.style.setProperty("background-image", "url(" + url + ")");
+		} else {
+			log.error(`Element with id '${id}' is undefined!`);
+			return false;
+		}
+	}
 }
 
 function rand(min, max) {
@@ -41,8 +52,40 @@ function get_random_image() {
 	return null; // Если не найдено ни одного изображения
 }
 
+var image_animation_time = 2500;
+var image_switch_interval = 20000;
+var div = document.getElementById("image_animation_div");
+
+var image_switch_interval = setInterval(() => {
+	switch_image();
+}, image_switch_interval);
+
 async function css_main() {
 	set_background_by_url("../" + get_random_image());
+	div.style.setProperty(
+		"transition",
+		`all ${image_animation_time}ms ease-in-out`
+	);
+}
+
+async function switch_image() {
+	image = get_random_image();
+
+	set_background_by_url("../" + image, div.id);
+	div.style.setProperty("opacity", "1");
+
+	setTimeout(() => {
+		set_background_by_url("../" + image);
+
+		setTimeout(() => {
+			div.style.setProperty("opacity", "0");
+		}, image_animation_time * 1.1);
+	}, image_animation_time * 1.1);
+
+	clearInterval(image_switch_interval);
+	image_switch_interval = setInterval(() => {
+		switch_image();
+	}, 20000);
 }
 
 /*
