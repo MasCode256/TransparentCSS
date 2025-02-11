@@ -27,6 +27,7 @@ async function fetchWithProgress(url) {
 }
 
 var page_history = [];
+var current = 0;
 
 async function switch_page(id, src) {
 	out(`Загрузка страницы '${src}'...`);
@@ -52,7 +53,15 @@ async function switch_page(id, src) {
 			setTimeout(async () => {
 				out("Успешная загрузка страницы.", "var(--success)");
 
-				if (id == "main") page_history.push(src);
+				if (id == "main") {
+					page_history.push(src);
+
+					if (page_history.length == 1) {
+						current = 0;
+					} else {
+						current++;
+					}
+				}
 
 				frame.innerHTML = await response.text();
 				main();
@@ -127,11 +136,87 @@ async function out(text, color = "var(--w)") {
 	}
 }
 
-function last_page() {
-	switch_page("main", history[history.length - 1]);
+function back_page() {
+	if (current > 0) {
+		current--;
+		switch_page("main", page_history[current]);
+	} else {
+		out("Ошибка: достигнуто начало истории переходов.", "var(--err)");
+	}
+}
+
+function next_page() {
+	if (current < page_history.length - 1) {
+		current++;
+		switch_page("main", page_history[current]);
+	} else {
+		out("Ошибка: достигнут конец истории переходов.", "var(--err)");
+	}
 }
 
 document.addEventListener("DOMContentLoaded", () => {
 	main();
-	out("Hello, world!");
+	out("TransparentCSS Experimental v0.25.2");
+
+	const follower = document.getElementById("title");
+	var iterations = [];
+
+	document.addEventListener("mousemove", function (event) {
+		follower.style.setProperty("left", `${event.pageX + 30}px`);
+		follower.style.setProperty("top", `${event.pageY + 10}px`);
+	});
+
+	document.addEventListener("mouseover", async (event) => {
+		const target = event.target;
+
+		if (target.getAttribute("data-title")) {
+			if (target.getAttribute("data-title-color")) {
+				follower.style.setProperty(
+					"color",
+					target.getAttribute("data-title-color")
+				);
+			}
+
+			const text = target.getAttribute("data-title");
+			follower.innerHTML = "";
+
+			for (let index = 0; index < text.length; index++) {
+				if (index + 1 < text.length) {
+					iterations.push(
+						setTimeout(() => {
+							follower.innerHTML += text[index];
+						}, (500 * index) / (text.length / 2))
+					);
+				} else {
+					iterations.push(
+						setTimeout(() => {
+							follower.innerHTML = text;
+						}, (500 * index) / (text.length / 2))
+					);
+				}
+			}
+
+			const handleMouseLeave = async () => {
+				follower.style.setProperty("color", "var(--w)");
+
+				iterations.forEach((iteration) => {
+					clearTimeout(iteration);
+				});
+
+				for (let index = follower.innerHTML.length; index >= 0; index--) {
+					follower.innerHTML = follower.innerHTML.slice(0, -1);
+					await delay((1 * index) / follower.innerHTML.length);
+				}
+
+				follower.innerHTML = "";
+				target.removeEventListener("mouseleave", handleMouseLeave); // Удаляем обработчик
+			};
+
+			target.addEventListener("mouseleave", handleMouseLeave);
+		}
+	});
+
+	document.addEventListener("mouseenter", async () => {
+		follower.innerHTML = "";
+	});
 });

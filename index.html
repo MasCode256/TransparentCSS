@@ -23,6 +23,7 @@
 		<div id="image_animation_div"></div>
 		<div class="shadow"></div>
 		<p id="out">Hello, world!</p>
+		<p id="title"></p>
 		<div class="t pad mrg center-x">
 			<h1
 				class="font-1 epic"
@@ -33,6 +34,7 @@
 			<p>
 				This is emaple for CSS.<a
 					href="https://github.com/MasCode256/TransparentCSS"
+					data-title="Репозиторий на Github"
 					>Github</a
 				>
 			</p>
@@ -40,6 +42,8 @@
 				<button
 					class="primary a"
 					onclick="switch_image()"
+					data-title="Случайно выбрать фоновое изображение из встроенного списка"
+					data-title-color="#f0f"
 				>
 					Изменить картинку
 				</button>
@@ -49,12 +53,37 @@
 		</div>
 		<div class="center-y"></div>
 		<div class="center-y">
-			<div class="center-x">
-				<button onclick="switch_page('main', 'html/0.html')">
+			<div
+				class="center-x"
+				style="height: 100%"
+			>
+				<button
+					class="fixed-width"
+					onclick="switch_page('main', 'html/0.html')"
+				>
 					Страница 0
 				</button>
-				<button onclick="switch_page('main', 'html/1.html')">
+				<button
+					class="fixed-width"
+					onclick="switch_page('main', 'html/1.html')"
+				>
 					Страница 1
+				</button>
+				<button
+					class="fixed-width"
+					onclick="back_page()"
+					data-title="Эксперементальная функция. Может не работать в некоторых случаях."
+					data-title-color="#f00"
+				>
+					Предыдущая страница
+				</button>
+				<button
+					class="fixed-width"
+					onclick="next_page()"
+					data-title="Эксперементальная функция. Может не работать в некоторых случаях."
+					data-title-color="#f00"
+				>
+					Следующая страница
 				</button>
 			</div>
 			<div
