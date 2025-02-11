@@ -1,4 +1,4 @@
-input {
+input[type="text"] {
 	width: 15vw;
 	min-height: 1.6vh;
 
@@ -68,5 +68,23 @@ input {
 	/* Для Edge */
 	&::-ms-input-placeholder {
 		color: var(--ph);
+	}
+}
+
+input[type="color"] {
+	background: var(--t);
+	background-color: var(--t);
+
+	border: none;
+	border-radius: var(--btn-br);
+
+	width: calc(1.2vh + 1.2vw + 5px);
+	height: calc(1.2vh + 1.2vw + 5px);
+
+	cursor:pointer;
+
+	&:hover {
+		background: var(--t0);
+		background-color: var(--t0);
 	}
 }

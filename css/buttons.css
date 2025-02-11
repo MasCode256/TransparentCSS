@@ -39,6 +39,8 @@ button {
 	}
 
 	&.primary {
+		background: var(--primary);
+
 		&.a {
 			background: var(--alpha);
 		}
@@ -53,6 +55,18 @@ button {
 			color: var(--w);
 
 			background: var(--t0);
+		}
+	}
+
+	&.fixed-width {
+		min-width: 12vw;
+
+		padding-left: 0;
+		padding-right: 0;
+
+		&:hover {
+			padding-left: calc(var(--pad-x) + var(--hover-x));
+			padding-right: calc(var(--pad-x) + var(--hover-x));
 		}
 	}
 }
